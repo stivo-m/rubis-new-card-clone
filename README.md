@@ -13,6 +13,7 @@ The purpose of this project is to replicate the flow of obtaining a card from th
 Clone the repository to your local machine and change directory to the project.
 
 ```shell
+git clone https://github.com/stivo-m/rubis-new-card-clone.git
 cd rubis_card_clone
 ```
 
