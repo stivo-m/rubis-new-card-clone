@@ -1,16 +1,29 @@
-# rubis_card_clone
+# Rubis Clone - New Card Form
 
-A new Flutter project.
+The purpose of this project is to replicate the flow of obtaining a card from the Rubis App. This involves generating a multi-step form to collect details necessary in requesting for a new card. The process of obtaining a new card will be divided into four categories:
 
-## Getting Started
+- Obtaining personal information
+- Obtaining information on where and how the card can be used
+- Selecting a pickup location
+- Detail confirmation
+- OTP verification
 
-This project is a starting point for a Flutter application.
+## How to run the project
 
-A few resources to get you started if this is your first Flutter project:
+Clone the repository to your local machine and change directory to the project.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+```shell
+cd rubis_card_clone
+```
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Once that is done, install the flutter dependencies
+
+```dart
+flutter pub get
+```
+
+Run the project. This assumes you have an emulator running
+
+```dart
+flutter run
+```
