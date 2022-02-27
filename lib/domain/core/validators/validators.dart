@@ -12,7 +12,7 @@ Either<ValueFailure<String>, String> validateEmailAddress(String input) {
 }
 
 Either<ValueFailure<String>, String> validatePhoneNumber(String input) {
-  const String phoneNumberRegex = r"""/^(\+254|0)[0-9]\d{8}$/""";
+  const String phoneNumberRegex = r'(^(\+254|0)[0-9]\d{8}$)';
   if (RegExp(phoneNumberRegex).hasMatch(input)) {
     return right(input);
   } else {
