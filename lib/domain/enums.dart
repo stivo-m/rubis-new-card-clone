@@ -16,3 +16,25 @@ extension IdentityTypeExt on IdentityType {
     }
   }
 }
+
+enum CardInformationStage {
+  collectingBioInformation,
+  collectingUsageInformation,
+  collectingPickupLocation,
+  confirmation,
+  validateOTP
+}
+
+enum InputType {
+  text,
+  phoneNumber,
+  dropDown,
+}
+
+enum StepStatus {
+  active,
+  inactive,
+  completed,
+  error,
+  unknown,
+}

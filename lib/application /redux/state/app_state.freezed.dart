@@ -22,9 +22,15 @@ AppState _$AppStateFromJson(Map<String, dynamic> json) {
 class _$AppStateTearOff {
   const _$AppStateTearOff();
 
-  _AppState call({CardInformation? cardInformation, ThemeMode? themeMode}) {
+  _AppState call(
+      {CardInformation? cardInformation,
+      CardInformationStage? cardInformationStage,
+      @JsonKey(ignore: true) PageController? cardPageController,
+      ThemeMode? themeMode}) {
     return _AppState(
       cardInformation: cardInformation,
+      cardInformationStage: cardInformationStage,
+      cardPageController: cardPageController,
       themeMode: themeMode,
     );
   }
@@ -40,6 +46,10 @@ const $AppState = _$AppStateTearOff();
 /// @nodoc
 mixin _$AppState {
   CardInformation? get cardInformation => throw _privateConstructorUsedError;
+  CardInformationStage? get cardInformationStage =>
+      throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  PageController? get cardPageController => throw _privateConstructorUsedError;
   ThemeMode? get themeMode => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -52,7 +62,11 @@ mixin _$AppState {
 abstract class $AppStateCopyWith<$Res> {
   factory $AppStateCopyWith(AppState value, $Res Function(AppState) then) =
       _$AppStateCopyWithImpl<$Res>;
-  $Res call({CardInformation? cardInformation, ThemeMode? themeMode});
+  $Res call(
+      {CardInformation? cardInformation,
+      CardInformationStage? cardInformationStage,
+      @JsonKey(ignore: true) PageController? cardPageController,
+      ThemeMode? themeMode});
 
   $CardInformationCopyWith<$Res>? get cardInformation;
 }
@@ -68,6 +82,8 @@ class _$AppStateCopyWithImpl<$Res> implements $AppStateCopyWith<$Res> {
   @override
   $Res call({
     Object? cardInformation = freezed,
+    Object? cardInformationStage = freezed,
+    Object? cardPageController = freezed,
     Object? themeMode = freezed,
   }) {
     return _then(_value.copyWith(
@@ -75,6 +91,14 @@ class _$AppStateCopyWithImpl<$Res> implements $AppStateCopyWith<$Res> {
           ? _value.cardInformation
           : cardInformation // ignore: cast_nullable_to_non_nullable
               as CardInformation?,
+      cardInformationStage: cardInformationStage == freezed
+          ? _value.cardInformationStage
+          : cardInformationStage // ignore: cast_nullable_to_non_nullable
+              as CardInformationStage?,
+      cardPageController: cardPageController == freezed
+          ? _value.cardPageController
+          : cardPageController // ignore: cast_nullable_to_non_nullable
+              as PageController?,
       themeMode: themeMode == freezed
           ? _value.themeMode
           : themeMode // ignore: cast_nullable_to_non_nullable
@@ -99,7 +123,11 @@ abstract class _$AppStateCopyWith<$Res> implements $AppStateCopyWith<$Res> {
   factory _$AppStateCopyWith(_AppState value, $Res Function(_AppState) then) =
       __$AppStateCopyWithImpl<$Res>;
   @override
-  $Res call({CardInformation? cardInformation, ThemeMode? themeMode});
+  $Res call(
+      {CardInformation? cardInformation,
+      CardInformationStage? cardInformationStage,
+      @JsonKey(ignore: true) PageController? cardPageController,
+      ThemeMode? themeMode});
 
   @override
   $CardInformationCopyWith<$Res>? get cardInformation;
@@ -117,6 +145,8 @@ class __$AppStateCopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? cardInformation = freezed,
+    Object? cardInformationStage = freezed,
+    Object? cardPageController = freezed,
     Object? themeMode = freezed,
   }) {
     return _then(_AppState(
@@ -124,6 +154,14 @@ class __$AppStateCopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res>
           ? _value.cardInformation
           : cardInformation // ignore: cast_nullable_to_non_nullable
               as CardInformation?,
+      cardInformationStage: cardInformationStage == freezed
+          ? _value.cardInformationStage
+          : cardInformationStage // ignore: cast_nullable_to_non_nullable
+              as CardInformationStage?,
+      cardPageController: cardPageController == freezed
+          ? _value.cardPageController
+          : cardPageController // ignore: cast_nullable_to_non_nullable
+              as PageController?,
       themeMode: themeMode == freezed
           ? _value.themeMode
           : themeMode // ignore: cast_nullable_to_non_nullable
@@ -135,7 +173,11 @@ class __$AppStateCopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_AppState implements _AppState {
-  _$_AppState({this.cardInformation, this.themeMode});
+  _$_AppState(
+      {this.cardInformation,
+      this.cardInformationStage,
+      @JsonKey(ignore: true) this.cardPageController,
+      this.themeMode});
 
   factory _$_AppState.fromJson(Map<String, dynamic> json) =>
       _$$_AppStateFromJson(json);
@@ -143,11 +185,16 @@ class _$_AppState implements _AppState {
   @override
   final CardInformation? cardInformation;
   @override
+  final CardInformationStage? cardInformationStage;
+  @override
+  @JsonKey(ignore: true)
+  final PageController? cardPageController;
+  @override
   final ThemeMode? themeMode;
 
   @override
   String toString() {
-    return 'AppState(cardInformation: $cardInformation, themeMode: $themeMode)';
+    return 'AppState(cardInformation: $cardInformation, cardInformationStage: $cardInformationStage, cardPageController: $cardPageController, themeMode: $themeMode)';
   }
 
   @override
@@ -157,6 +204,10 @@ class _$_AppState implements _AppState {
             other is _AppState &&
             const DeepCollectionEquality()
                 .equals(other.cardInformation, cardInformation) &&
+            const DeepCollectionEquality()
+                .equals(other.cardInformationStage, cardInformationStage) &&
+            const DeepCollectionEquality()
+                .equals(other.cardPageController, cardPageController) &&
             const DeepCollectionEquality().equals(other.themeMode, themeMode));
   }
 
@@ -164,6 +215,8 @@ class _$_AppState implements _AppState {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(cardInformation),
+      const DeepCollectionEquality().hash(cardInformationStage),
+      const DeepCollectionEquality().hash(cardPageController),
       const DeepCollectionEquality().hash(themeMode));
 
   @JsonKey(ignore: true)
@@ -178,13 +231,21 @@ class _$_AppState implements _AppState {
 }
 
 abstract class _AppState implements AppState {
-  factory _AppState({CardInformation? cardInformation, ThemeMode? themeMode}) =
-      _$_AppState;
+  factory _AppState(
+      {CardInformation? cardInformation,
+      CardInformationStage? cardInformationStage,
+      @JsonKey(ignore: true) PageController? cardPageController,
+      ThemeMode? themeMode}) = _$_AppState;
 
   factory _AppState.fromJson(Map<String, dynamic> json) = _$_AppState.fromJson;
 
   @override
   CardInformation? get cardInformation;
+  @override
+  CardInformationStage? get cardInformationStage;
+  @override
+  @JsonKey(ignore: true)
+  PageController? get cardPageController;
   @override
   ThemeMode? get themeMode;
   @override
