@@ -13,3 +13,35 @@ const String vehicleRegistrationDescription =
     'Leave blank if you do not wish to restrict this card to one vehicle';
 const String emailAddressText = 'Email Address';
 const String activeEmailText = 'Provide an active email address';
+
+List<String> productUsageItems = <String>[
+  'Airtime',
+  'Burner',
+  'Cyliner',
+  'Grease',
+  'Grill',
+  'Hosepipe',
+  'Kerosene',
+  'Lantern',
+  'Lubricants',
+  'Pole',
+  'Refils',
+  'Regulator',
+  'Soda',
+  'Unldsuper',
+  'Water',
+  'Wash',
+  'Diesel',
+  'Shop',
+  'Others'
+];
+
+List<String> zones = <String>[
+  'Eldoret',
+  'Central',
+  'Kisumu',
+  'Nakuru',
+  'Nairobi',
+  'Mount Kenya',
+  'Mombasa'
+];
