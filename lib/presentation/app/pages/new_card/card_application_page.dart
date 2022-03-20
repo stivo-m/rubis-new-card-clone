@@ -1,8 +1,10 @@
 import 'package:async_redux/async_redux.dart';
 import 'package:flutter/material.dart';
+import 'package:rubis_card_clone/application%20/redux/actions/update_page_view_action.dart';
 import 'package:rubis_card_clone/application%20/redux/state/app_state.dart';
 import 'package:rubis_card_clone/application%20/redux/view_models/new_card_view_model.dart';
 import 'package:rubis_card_clone/domain/strings.dart';
+import 'package:rubis_card_clone/presentation/app/pages/new_card/widgets/card_usage_information_widget.dart';
 import 'package:rubis_card_clone/presentation/app/pages/new_card/widgets/user_information_widget.dart';
 import 'package:rubis_card_clone/presentation/app/widgets/custom_app_bar.dart';
 
@@ -11,6 +13,7 @@ class CardApplicationPage extends StatelessWidget {
 
   final List<Widget> pages = <Widget>[
     UserInformationWidget(),
+    CardUsageInformationWidget(),
   ];
 
   @override
@@ -34,6 +37,10 @@ class CardApplicationPage extends StatelessWidget {
                   child: PageView(
                     scrollDirection: Axis.horizontal,
                     controller: vm.pageController,
+                    onPageChanged: (int value) => StoreProvider.dispatch(
+                      context,
+                      UpdatePageViewAction(pageIndex: value),
+                    ),
                     children: pages,
                   ),
                 ),

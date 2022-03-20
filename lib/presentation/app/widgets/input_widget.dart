@@ -39,7 +39,7 @@ class InputWidget extends StatelessWidget {
           Text(
             '$title${isFieldRequired! ? '*' : ''}',
             style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                  fontSize: 18,
+                  fontSize: 16,
                 ),
           ),
           if (subtitle != null) ...<Widget>[
